@@ -1,0 +1,96 @@
+/*---------------------------------
+  TOOLBARS
+-----------------------------------*/
+.toolbar{
+	.list-unstyled;
+	float:right;
+	
+	> li {
+		display: block;
+		float: left;
+		height:@contentHeaderHeight;
+		line-height:@contentHeaderHeight;
+		
+	   > a{
+			display: inline-block;
+  			padding-left: @half-space;
+			padding-right: @half-space;
+			color:lighten(@text-color, 10%);
+			
+			&.text-primary,
+			&.text-primary:hover,
+			&.text-primary:focus{.text-primary;}
+			&.text-success,
+			&.text-success:hover,
+			&.text-success:focus{.text-success;}
+			&.text-info,
+			&.text-info:hover,
+			&.text-info:focus{.text-info;}
+			&.text-warning,
+			&.text-warning:hover,
+			&.text-warning:focus{.text-warning;}
+			&.text-danger,
+			&.text-danger:hover,
+			&.text-danger:focus{.text-danger;}
+			
+			&:hover,
+			&:focus{
+				color: @text-color;
+			}
+		}
+		
+		&.toolbar-btn{
+			position: relative;
+			
+		   > a{
+				.border-right(@border-color-darker);
+				.border-left(@border-color-darker);
+				.border-top(@border-color-darker);
+				#gradient > .vertical(lighten(@darker-bg, 5%), darken(@darker-bg, 5%));
+				padding-left: @default-space;
+				padding-right: @default-space;
+				
+				&:hover,
+				&:focus{
+					#gradient > .vertical(lighten(@darker-bg, 10%), @darker-bg);
+				}
+			}
+			
+			& ~ .toolbar-btn{
+				> a{border-left:none;} 
+			}
+		}
+		
+		&.filters{
+			padding-left: @default-space;
+			padding-right: 3px;
+			
+			> a{
+				height:auto;
+				line-height: normal;
+				display: inline;
+				line-height: 1;
+				text-align: center;
+				white-space: nowrap;
+				vertical-align: baseline;
+				.label;
+				color: @text-color;
+				
+				&.active,
+				&:hover,
+				&:focus{
+					background: darken(@darker-bg, 25%);
+					color: #FFFFFF;
+				}
+			}
+		}
+	}
+}
+
+.content-header-left .toolbar{
+	margin-top: -13px;
+}
+
+.toolbar-search{
+	max-width: 170px;
+}

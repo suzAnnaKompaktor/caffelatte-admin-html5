@@ -1,0 +1,160 @@
+/*---------------------------------
+  CHECKBOX, RADIO
+-----------------------------------*/
+.checkbox-custom,
+.radio-custom {
+  position: relative;
+  padding: 0 0 0 22 + @third-space;
+  margin-top: 0;
+}
+
+.form-horizontal .form-group .checkbox-custom,
+.form-horizontal .form-group .radio-custom{
+	margin-top:@half-space;
+}
+
+@media only screen and (max-width: @screen-xs-max){
+  .form-horizontal .form-group .checkbox-custom,
+  .form-horizontal .form-group .radio-custom{
+		margin-top:0;
+  }
+}
+
+.checkbox-custom input[type="checkbox"],
+.radio-custom input[type="radio"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.checkbox-custom label,
+.radio-custom label {
+  cursor: pointer;
+  margin-bottom: 0;
+  text-align: left;
+  line-height: 1.2;
+}
+
+.checkbox-custom label:before,
+.radio-custom label:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  .border(@input-border);
+  .light-bg;
+  .inner-shadow(0, 2px, 5px);
+}
+.checkbox-custom label:before{.round-border(4px);}
+.radio-custom label:before{.round-border(50%);}
+
+.checkbox-custom input[type="checkbox"]:disabled + label:before,
+.radio-custom input[type="radio"]:disabled + label:before{
+  cursor: not-allowed;
+  background-color: @input-bg-disabled;
+  .unset-shadow;
+  opacity: 1; // iOS fix for unreadable disabled content
+}
+
+.checkbox-custom input[type="checkbox"]:checked + label:after{
+  position: absolute;
+  .icon;
+  content: '\f00c';
+  top: 0;
+  left:0;
+  width: 22px;
+  height: 22px;
+  padding-top:3px;
+  text-align: center;
+  .base-text-color;
+}
+
+.radio-custom input[type="radio"]:checked + label:after{
+  content:'';
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 12px;
+  height: 12px;
+  margin-top:5px;
+  margin-left:5px;
+  background: @text-color;
+  display: inline-block;
+  line-height: 1;
+  font-size: 11px;
+  .round-border(50px);
+}
+
+.checkbox-custom input[type="checkbox"]:disabled + label:after{
+  color:@gray;
+}
+
+.radio-custom input[type="radio"]:disabled + label:after{
+	background-color:@gray;
+}
+
+.checkbox-custom.checkbox-primary{
+	.checkbox-colorize(@brand-primary);
+}
+.checkbox-custom.checkbox-info{
+	.checkbox-colorize(@state-info-text);
+}
+.checkbox-custom.checkbox-success{
+	.checkbox-colorize(@state-success-text);
+}
+.checkbox-custom.checkbox-warning{
+	.checkbox-colorize(@state-warning-text);
+}
+.checkbox-custom.checkbox-danger{
+	.checkbox-colorize(@state-danger-text);
+}
+
+.radio-custom.radio-primary{
+	.radio-colorize(@brand-primary);
+}
+.radio-custom.radio-info{
+	.radio-colorize(@brand-info);
+}
+.radio-custom.radio-success{
+	.radio-colorize(@brand-success);
+}
+.radio-custom.radio-warning{
+	.radio-colorize(@brand-warning);
+}
+.radio-custom.radio-danger{
+	.radio-colorize(@brand-danger);
+}
+
+.checkbox-custom.checkbox-inverse{
+	label:before{
+		background-color: @inverse-bg;
+		border-color: @border-color-inverse;
+		.inner-shadow(0, 2px, 5px, rgba(0, 0, 0, 0.1));
+	}
+	
+	input[type="checkbox"]:checked + label:after{.inverse-text-color;}
+}
+
+.checkbox-custom.checkbox-primary.checkbox-inverse{
+	.checkbox-inverse-colorize(@brand-primary);
+}
+.checkbox-custom.checkbox-info.checkbox-inverse{
+	.checkbox-inverse-colorize(@brand-info);
+}
+.checkbox-custom.checkbox-success.checkbox-inverse{
+	.checkbox-inverse-colorize(@brand-success);
+}
+.checkbox-custom.checkbox-warning.checkbox-inverse{
+	.checkbox-inverse-colorize(@brand-warning);
+}
+.checkbox-custom.checkbox-danger.checkbox-inverse{
+	.checkbox-inverse-colorize(@brand-danger);
+}

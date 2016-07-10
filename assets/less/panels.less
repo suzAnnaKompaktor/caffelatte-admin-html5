@@ -1,0 +1,168 @@
+/*---------------------------------
+  PANELS
+-----------------------------------*/
+.panel {
+  .drop-shadow;
+  .unset-border;
+  .unset-bg-color;
+}
+
+.panel-body {
+  .border;
+  .inner-shadow;
+  .light-bg;
+}
+
+.panel.collapsed .panel-body {
+  display:none;
+}
+
+.panel-heading:not(.panel-heading-transparent) + .panel-body {
+  border-top:none;
+}
+
+.panel-heading {
+  position:relative;
+  .round-border(0);
+  .border(@border-color-dark);
+  .darker-bg;
+}
+
+.panel-actions {
+  position: absolute;
+  right: @default-space;
+  top: @half-space;
+}
+
+.panel-actions a{
+  padding-left:@half-space;
+  color: @text-color;
+  .opacity(0.5);
+  
+  &:hover,
+  &:focus,
+  &.active {
+    .opacity(1);
+  }
+  
+  &.fa-star{
+  	.text-emphasis-variant(@state-warning-text);
+  	.opacity(0.9);
+  }
+}
+
+.panel-title{
+  margin-right:@double-space;
+}
+
+.panel-subtitle{
+  .small-text;
+  color:@gray;
+  margin:0;  
+}
+
+.panel-footer {
+  .dark-bg;
+  .border;
+  .round-border(0);
+  margin-top:-1px;
+}
+
+.panel-primary{
+  .panel-colorize(@brand-primary);
+}
+.panel-success{
+  .panel-colorize(@brand-success);
+}
+.panel-info {
+  .panel-colorize(@brand-info);
+}
+.panel-warning{
+  .panel-colorize(@brand-warning);
+}
+.panel-danger{
+  .panel-colorize(@brand-danger);
+}
+
+.panel-dark {
+  .panel-colorize(@inverse-bg);
+}
+
+.panel-footer-primary{
+  .panel-footer-colorize(@brand-primary);
+}
+.panel-footer-success{
+  .panel-footer-colorize(@brand-success);
+}
+.panel-footer-info {
+  .panel-footer-colorize(@brand-info);
+}
+.panel-footer-warning{
+  .panel-footer-colorize(@brand-warning);
+}
+.panel-footer-danger{
+  .panel-footer-colorize(@brand-danger);
+}
+
+.panel-footer-dark {
+  .panel-footer-colorize(@inverse-bg);
+}
+
+.panel-heading-transparent,
+.panel-transparent,
+.panel-transparent > .panel-body,
+.panel-transparent > .panel-heading,
+.panel-transparent > .panel-footer{
+  .unset-bg-color;
+  .unset-border;
+  .unset-shadow;
+  padding-left:0;
+  padding-right:0;
+}
+
+.panel-heading-transparent > .panel-actions,
+.panel-transparent > .panel-heading .panel-actions{
+  right: 5px;
+}
+
+.panel-horizontal {
+	display: table;
+	width: 100%;
+}
+
+.panel-horizontal .panel-heading, 
+.panel-horizontal .panel-body, 
+.panel-horizontal .panel-footer {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.panel-footer.btn-group-justified{
+	padding: 0;
+	.unset-border;
+	
+	.btn{
+		.round-border(0);
+	}
+}
+
+.panel .top-image{
+	position:relative;
+	height: 150px;
+	text-align: center;
+	overflow: hidden;
+	.border-top(@border-color-darker);
+	.border-left(@border-color-darker);
+	.border-right(@border-color-darker);
+	
+	.image-container{
+		position: absolute;
+		top: -50%;
+		left:0;
+		right: 0;
+		
+		img{
+			width: 100%;
+		}
+	}
+}

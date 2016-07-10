@@ -1,0 +1,32 @@
+/*---------------------------------
+  TABLES
+-----------------------------------*/
+.table-row-variant(primary; @state-primary-bg);
+
+/* Inverse row */
+.table > thead > tr,
+.table > tbody > tr,
+.table > tfoot > tr {
+    > td.dark,
+    > th.dark,
+    &.dark > td,
+    &.dark > th {
+      background-color: @inverse-bg;
+      .inverse-text-color;
+    }
+}
+
+/* Hover states for inverse table row */
+.table-hover > tbody > tr {
+    > td.dark:hover,
+    > th.dark:hover,
+    &.dark:hover > td,
+    &:hover > .dark,
+    &.dark:hover > th {
+      background-color: lighten(@inverse-bg, 5%);
+    }
+}
+
+td.actions a{
+	padding-right: @half-space;
+}

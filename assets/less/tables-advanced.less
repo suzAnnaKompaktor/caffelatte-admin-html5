@@ -1,0 +1,50 @@
+/* Advanced tables */
+.dataTables_length .select2-container{
+	width: 75px;
+	display: inline-block;
+}
+
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_desc {
+	background: none;
+	position: relative;
+	
+	&:after{
+		position: absolute;
+		right: @third-space;
+	}
+}
+
+table.dataTable thead .sorting_asc {
+	.add-icon("\f0de", after);
+}
+
+table.dataTable thead .sorting_desc {
+	.add-icon("\f0dd", after);
+}
+
+table.dataTable thead .sorting {
+	.add-icon("\f0dc", after);
+}
+
+.DTTT_container{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle; // match .btn alignment given font-size hack above
+  > .btn {
+    position: relative;
+    float: left;
+    // Bring the "active" button to the front
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      z-index: 2;
+    }
+    &:focus {
+      // Remove focus outline when dropdown JS adds it after closing the menu
+      outline: 0;
+    }
+  }
+}

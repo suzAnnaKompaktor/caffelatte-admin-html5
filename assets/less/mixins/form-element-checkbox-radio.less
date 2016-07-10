@@ -1,0 +1,26 @@
+/*---------------------------------
+  MIXINS - CHECKBOX, RADIO
+-----------------------------------*/
+.checkbox-colorize(@color){
+  
+  input[type="checkbox"]:checked + label:after{
+  	color: @color;
+  }
+}
+
+.radio-colorize(@color){
+  
+  input[type="radio"]:checked + label:after{
+  	background-color: @color;
+  }
+}
+
+.checkbox-inverse-colorize(@color){
+  
+  label:before{
+	  background-color: @color;
+	  @darken: darken(@color, 8%);
+	  border-color:spin(@darken, -10);
+	  .inner-shadow(0, 2px, 5px, rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  }
+}

@@ -1,0 +1,26 @@
+/*---------------------------------
+  SPINNER
+-----------------------------------*/
+.spinbox .spinbox-buttons {
+	position: absolute;
+	height: @input-height-base;
+	width: 20px;
+	top:0;
+	right: 2px;
+}
+
+.spinbox .spinbox-buttons > .btn{
+	height: @input-height-base / 2;
+	padding: 0;
+}
+
+.spinbox .spinbox-buttons > .btn:first-child:not(:last-child):not(.dropdown-toggle){
+	border-top-left-radius: 0;
+	border-top-right-radius: @border-radius-base;
+}
+
+.spinbox .spinbox-buttons > .btn:last-child{
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: @border-radius-base;
+	height: (@input-height-base / 2) + 1px;
+}

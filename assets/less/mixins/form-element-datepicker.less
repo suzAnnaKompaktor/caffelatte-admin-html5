@@ -1,0 +1,58 @@
+/*---------------------------------
+  MIXINS - DATEPICKER
+-----------------------------------*/
+.datapicker-colorize(@color){
+	table {
+		thead tr{
+			th{
+				background-color: @color;
+				color: @inverse-text-color;
+				border-radius: 0;
+			
+				&:hover{
+					background-color: lighten(@color, 5%);
+				}
+			}
+			
+			&:last-child th{
+				background-color: lighten(@color, 7%);
+			}
+			
+			&:last-child th:hover {
+				background-color: lighten(@color, 12%);
+			}
+		}
+	}
+	
+	td.day:hover {
+		background-color: @color;
+		color: @inverse-text-color;
+	}
+	
+	table tr td.active:hover,
+	table tr td.active:hover:hover,
+	table tr td.active.disabled:hover,
+	table tr td.active.disabled:hover:hover,
+	table tr td.active:focus,
+	table tr td.active:hover:focus,
+	table tr td.active.disabled:focus,
+	table tr td.active.disabled:hover:focus,
+	table tr td.active:active,
+	table tr td.active:hover:active,
+	table tr td.active.disabled:active,
+	table tr td.active.disabled:hover:active,
+	table tr td.active.active,
+	table tr td.active:hover.active,
+	table tr td.active.disabled.active,
+	table tr td.active.disabled:hover.active{
+		background-color: @color;
+		@darken: darken(@color, 8%);
+  		border-color:spin(@darken, -10);
+	}
+}
+
+.datapicker-active-colorize(@color){
+  background-color: @color;
+  @darken: darken(@color, 8%);
+  border-color:spin(@darken, -10);
+}

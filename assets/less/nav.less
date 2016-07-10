@@ -1,0 +1,205 @@
+/*---------------------------------
+  NAVIGATION
+-----------------------------------*/
+/* Main nav */
+.main-nav-header{
+  padding:0 @default-space;
+  position:relative;
+  
+  h6{
+    .semi-bold;
+    font-size: 15px;
+    color:lighten(@text-color, 35%);
+  }
+  .toggle-sidebar-left{
+    position: absolute;
+    right: @default-space;
+    top: 0;
+    cursor: pointer;
+    text-align: center;
+    color:lighten(@text-color, 35%);
+    .bold;
+    padding-bottom: @half-space;
+    
+    &:hover,
+    &:focus{
+      .link-color;
+    }
+  }
+}
+
+.main-nav li > a{
+  .base-text-color;
+  &:hover,
+  &:focus {
+     .bg-primary;
+  }
+  
+  i.fa{
+     width: 1.28571429em;
+  }
+}
+
+.main-nav li.nav-active > a{.bg-primary;}
+
+.main-nav li.nav-parent {
+  display:block;
+  
+  > a{
+  display:block;
+  .uppercase;
+  .bold;
+  .small-text;
+  color:lighten(@text-color, 35%);
+  cursor:pointer;
+  
+  &:hover,
+  &:focus {
+     .base-text-color;
+     .darker-bg;
+     
+     &:after{
+       color:@link-color;
+     }
+  }
+  .add-icon('\f107', after);
+  
+   &:after{
+    float:right;
+   }
+   
+  }
+}
+.main-nav li.nav-parent.nav-expanded{
+    > a{
+      .base-text-color;
+      .darker-bg;
+      .add-icon('\f106', after);
+    }
+    
+    ul.nav-children {
+      display: block;
+    }
+}
+.main-nav li.nav-parent.nav-active{
+  > a{
+      .base-text-color;
+      .darker-bg;
+    }
+}
+.main-nav ul.nav-children{
+  display:none;
+  .base-bg;
+  .inner-shadow;
+  .border-top;
+  .border-bottom;
+}
+
+html.sidebar-left-collapsed .main-nav > li{
+    display:block;
+    width:@menuBarWidth;
+    height:35px;
+    
+    > a span{
+      padding-left:@menuBarCollapsedWidth;
+    }
+  
+  &.nav-parent.nav-expanded > ul{
+    display:none;
+  }
+  
+  &.nav-parent.nav-expanded > a > i.fa{
+    color:@link-color;
+  }
+  
+  &.nav-parent:hover,
+  &.nav-parent:focus{
+    position:fixed;
+    z-index:@zindex-navbar-fixed;
+    
+    > a{
+    	position:relative;
+    	.dark-bg; 
+    	.border-top; 
+    	.border-right;
+    	 z-index:@zindex-navbar-fixed;
+    	
+    	&:after{
+    		position:absolute;
+    		top:10px;
+    		right: @default-space;
+   		}
+    }
+    > ul{
+      position:relative;
+      display:block;
+      visibility:visible;
+      width:@menuBarWidth - @menuBarCollapsedWidth;
+      margin-left:@menuBarCollapsedWidth;
+      .light-bg;
+      .border-right;
+      .light-shadow;
+       z-index:@zindex-navbar-fixed;
+    }
+  }
+  
+  &.prev-active{
+  	margin-top:35px;
+  }
+}
+
+/* Secondary nav */
+.infobar .info-element.secondary-nav{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.secondary-nav .secondary-nav-title{
+	.dark-bg;
+	.border-top;
+	.border-right;
+	.border-left;
+	padding: @half-space @default-space;
+	
+	h6{
+		.semi-bold;
+    	font-size: 14px;
+    	color:lighten(@text-color, 35%);
+	}
+}
+
+.secondary-nav .nav.nav-list{
+	.round-border-top(0);
+	padding: @third-space @default-space;
+	
+	>li{
+		> a{
+			padding:@half-space;
+			color: lighten(@text-color, 10%);
+			font-size: 13px;
+			
+			.fa{
+				color: lighten(@text-color, 10%) !important;
+				width: 1em;
+			}
+			
+			&:hover{
+				background: @body-bg;
+				
+				.fa{
+					color: @link-color !important;
+				}
+			}
+		}
+		
+		&.active{
+		  > a{
+		    background: @body-bg;
+		    
+		    .fa{
+				color: @link-color;
+			}
+		  }
+		}
+	}
+}

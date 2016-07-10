@@ -1,0 +1,318 @@
+/*---------------------------------
+  WIDGETS
+-----------------------------------*/
+.widget-icon{
+	float:right;
+	margin-left: @default-space;
+	font-size: 45px;
+	font-size: 4.5rem;
+	color:@inverse-bg;
+	text-align: center;
+	.text-muted;
+}
+
+.widget-icon-primary .widget-icon{
+	color: @brand-primary;
+}
+
+.widget-icon-info .widget-icon{
+	color: @brand-info;
+}
+.widget-icon-success .widget-icon{
+	color: @brand-success;
+}
+.widget-icon-warning .widget-icon{
+	color: @brand-warning;
+}
+.widget-icon-danger .widget-icon{
+	color: @brand-danger;
+}
+
+.panel-heading .widget-icon{
+	float: none;
+	margin:@default-space auto;
+}
+
+.widget .summary .title{
+	margin-top:2px;
+	margin-bottom:5px;
+	font-size: 15px;
+}
+.widget .summary .amount{
+	font-size: 180%;
+	font-weight: normal;
+}
+.widget .summary-footer{
+	margin-top: @half-space;
+	margin-left:-@default-space;
+	margin-right:-@default-space;
+	margin-bottom:-@default-space;
+	padding: @half-space @default-space;
+	background: @darker-bg;
+	.border-top;
+	.drop-shadow(0; -1px; 2px);
+	
+	p{
+		margin-bottom: 0;
+	}
+	
+	.change{
+		float: left;
+		color:#6A7072;
+		i{
+			margin-right:@third-space;
+		}
+	}
+}
+
+.widget-lg{
+	.widget-icon{
+		font-size: 53px;
+		font-size: 5.3rem;
+	}
+	.summary .title{
+		font-size: 120%;
+	}
+	.summary .amount{
+		font-size: 200%;
+	}
+	font-size: 110%
+}
+
+.widget-sm{
+	.widget-icon{
+		font-size: 35px;
+		font-size: 3.5rem;
+	}
+	.summary .title{
+		font-size: 110%;
+	}
+	font-size: 85%
+}
+
+.widget-xs{
+	.widget-icon{
+		font-size: 30px;
+		font-size: 3.0rem;
+	}
+	.summary .title{
+		font-size: 105%;
+	}
+	.summary-footer{
+		margin-top: 5px;
+	}
+	font-size: 80%
+}
+
+.widget-dark{
+	.widget-colorize(@inverse-bg);
+}
+
+.widget-primary{
+  .widget-colorize(@brand-primary);
+}
+.widget-info{
+  .widget-colorize(@brand-info);
+}
+.widget-success{
+  .widget-colorize(@brand-success);
+}
+.widget-warning{
+  .widget-colorize(@brand-warning);
+}
+.widget-danger{
+  .widget-colorize(@brand-danger);
+}
+
+.panel-heading .widget-icon{
+	font-size: 42px;
+	font-size: 4.2rem;
+	width: 90px;
+	height: 90px;
+	line-height: 90px;
+	.round-border(50%);
+	text-align: center;
+	.inverse-text-color;
+	
+	&.bg-default{
+		background: @inverse-bg;
+		.inverse-text-color;
+	}
+}
+
+.panel-primary{
+   .widget-icon{
+	  background: spin(darken(@brand-primary, 8%), -3);
+	}
+}
+
+.panel-info{
+  .widget-icon{
+	  background: spin(darken(@brand-info, 8%), -3);
+	}
+}
+
+.panel-success{
+  .widget-icon{
+	  background: spin(darken(@brand-success, 8%), -3);
+	}
+}
+
+.panel-warning{
+  .widget-icon{
+	  background: spin(darken(@brand-warning, 8%), -3);
+	}
+}
+
+.panel-danger{
+  .widget-icon{
+	  background: spin(darken(@brand-danger, 8%), -3);
+	}
+}
+
+/* Profile widget */
+.widget .profile-picture img{
+	height: 110px;
+	width: 110px;
+	
+	.border(@border-color);
+	border-radius: 0;
+	.light-bg;
+	padding: 4px;
+}
+
+.widget-twitter-profile .profile-info .profile-picture {
+	float: left;
+	position: relative;
+}
+
+.widget-twitter-profile .profile-info .profile-picture{
+	display: block;
+	margin: -50px @default-space @half-space 0;
+	overflow: hidden;
+}
+
+.widget-twitter-profile .profile-info .profile-account {
+	float: left;
+}
+
+.widget-twitter-profile .profile-account h3{
+	margin-top:@default-space;
+	margin-bottom:0;
+}
+
+.widget-twitter-profile .profile-stats{
+	.list-unstyled();
+	float: right;
+	margin-top: @default-space;
+}
+
+.widget-twitter-profile .profile-stats li {
+	float: left;
+	padding: 0 10px;
+}
+
+.widget-twitter-profile .profile-stats li .stat {
+	font-size: 11px;
+	font-size: 1.1rem;
+	margin: 0;
+}
+
+.widget-twitter-profile .profile-stats li .count {
+	display: block;
+	margin: 0;
+	line-height: 1.4;
+	.bold;
+}
+.widget-twitter-profile .profile-quote blockquote{
+	margin-bottom:0;
+}
+.widget-twitter-profile .profile-quote .quote-footer {
+	padding: @third-space 0;
+	text-align: right;
+	color: @text-muted;
+	.small-text;
+}
+
+.widget-profile-info {
+	display: table;
+	width: 100%;
+}
+
+.widget-profile-info .profile-picture {
+	display: table-cell;
+	vertical-align: middle;
+	width: 1%;
+	
+	img{
+		margin-right: 15px;
+	}
+}
+
+.widget-profile-info .profile-info {
+	display: table-cell;
+	vertical-align: top;
+	width: 100%;
+}
+
+.widget-profile-info .profile-info .name{
+	margin-top: 0;
+}
+
+.widget-profile-info .profile-info .profile-footer {
+	position:absolute;
+	bottom:0;
+	right:0;
+	padding: 5px 0 0;
+	text-align: right;
+	.small-text;
+}
+
+/* Project list widget */
+.widget-tasks{
+	.widget-content ul > li{
+		.border-bottom(@border-color-light);
+	}
+}
+
+/* Task widget */
+ul.widget-task-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+ul.widget-task-list li {
+	.border-bottom;
+	padding: @default-space @default-space @default-space 0;
+	position: relative;
+}
+ul.widget-task-list li .checkbox-custom{
+	margin-bottom: 0;
+}
+ul.widget-task-list li .task-actions {
+	position: absolute;
+	top: 14px;
+	right: 0;
+	bottom: 14px;
+}
+
+ul.widget-task-list li .task-actions .task-remove {
+	font-size: 10px;
+	vertical-align: middle;
+	color: @gray-light;
+}
+
+.panel.widget .owl-carousel{
+	margin: -@default-space;
+	
+	.item{
+		margin: 0;
+	}
+}
+
+/* Chat widget */
+.widget-chat .chat-list > li.offline{
+	display:none;
+}

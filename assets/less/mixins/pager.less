@@ -1,0 +1,15 @@
+/*---------------------------------
+  MIXINS - PAGER
+-----------------------------------*/
+.pager-colorize(@color){
+	li:not(.disabled){
+		> a{
+			color: @color;
+		}
+		> a:hover,
+		> a:focus{
+			color: @inverse-text-color;
+			background-color: @color;
+		}
+	}
+}

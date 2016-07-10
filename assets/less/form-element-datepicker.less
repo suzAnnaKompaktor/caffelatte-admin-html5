@@ -1,0 +1,145 @@
+/*---------------------------------
+  DATEPICKER
+-----------------------------------*/
+.input-daterange .input-group-addon {
+	background-color: @input-group-addon-bg;
+	border-color: @input-group-addon-border-color;
+}
+
+.input-daterange .input-group-addon:first-child{
+	border-left-width: 1px;
+}
+
+.datepicker,
+.bootstrap-timepicker-widget{
+	padding:@default-space;
+	max-width: 280px;
+	min-width: 250px;
+	display: inline-block !important;
+}
+
+.bootstrap-timepicker-widget{
+	max-width: 200px;
+}
+
+.datepicker table {
+	width: 100%;
+}
+
+.datepicker table tr td {
+	border-radius: 0;
+}
+
+.datepicker table thead tr th {
+	cursor: pointer;
+	font-size: 13px;
+	font-size: 1.3rem;
+	text-align: center;
+	font-weight: normal;
+}
+
+.datepicker table thead tr th.prev {
+	content: '\f0d9';
+	font-family: FontAwesome;
+}
+
+.datepicker table thead tr th.next {
+	content: '\f0da';
+	font-family: FontAwesome;
+}
+
+.datepicker table td {
+	text-align: center;
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+
+.datepicker table td.day {
+	-webkit-transition: background-color 0.1s ease-in 0.1s, color 0.1s ease-in 0.1s;
+	-moz-transition: background-color 0.1s ease-in 0.1s, color 0.1s ease-in 0.1s;
+	transition: background-color 0.1s ease-in 0.1s, color 0.1s ease-in 0.1s;
+	cursor: pointer;
+}
+
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active:hover:focus,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+  color: @inverse-text-color;
+  background-color: @inverse-bg;
+  border-color: @border-color-inverse;
+}
+
+.datepicker.datepicker-inline{
+	.border;
+	.round-border;
+	background: @light-bg;
+	line-height: 1.7em;
+}
+
+.datepicker.datepicker-primary{
+	.datapicker-colorize(@brand-primary);
+}
+.datepicker.datepicker-info{
+	.datapicker-colorize(@brand-info);
+}
+.datepicker.datepicker-success{
+	.datapicker-colorize(@brand-success);
+}
+.datepicker.datepicker-warning{
+	.datapicker-colorize(@brand-warning);
+}
+.datepicker.datepicker-danger{
+	.datapicker-colorize(@brand-danger);
+}
+
+.open .dropdown-toggle.datepicker.datepicker-primary table tr td.active,
+.open .dropdown-toggle.datepicker.datepicker-primary table tr td.active:hover,
+.open .dropdown-toggle.datepicker.datepicker-primary table tr td.active.disabled,
+.open .dropdown-toggle.datepicker.datepicker-primary table tr td.active.disabled:hover {
+	.datapicker-active-colorize(@brand-primary);
+}
+
+.open .dropdown-toggle.datepicker.datepicker-info table tr td.active,
+.open .dropdown-toggle.datepicker.datepicker-info table tr td.active:hover,
+.open .dropdown-toggle.datepicker.datepicker-info table tr td.active.disabled,
+.open .dropdown-toggle.datepicker.datepicker-info table tr td.active.disabled:hover {
+  .datapicker-active-colorize(@brand-info);
+}
+
+.open .dropdown-toggle.datepicker.datepicker-success table tr td.active,
+.open .dropdown-toggle.datepicker.datepicker-success table tr td.active:hover,
+.open .dropdown-toggle.datepicker.datepicker-success table tr td.active.disabled,
+.open .dropdown-toggle.datepicker.datepicker-success table tr td.active.disabled:hover {
+  .datapicker-active-colorize(@brand-success);
+}
+
+.open .dropdown-toggle.datepicker.datepicker-warning table tr td.active,
+.open .dropdown-toggle.datepicker.datepicker-warning table tr td.active:hover,
+.open .dropdown-toggle.datepicker.datepicker-warning table tr td.active.disabled,
+.open .dropdown-toggle.datepicker.datepicker-warning table tr td.active.disabled:hover {
+  .datapicker-active-colorize(@brand-warning);
+}
+
+.open .dropdown-toggle.datepicker.datepicker-danger table tr td.active,
+.open .dropdown-toggle.datepicker.datepicker-danger table tr td.active:hover,
+.open .dropdown-toggle.datepicker.datepicker-danger table tr td.active.disabled,
+.open .dropdown-toggle.datepicker.datepicker-danger table tr td.active.disabled:hover {
+  .datapicker-active-colorize(@brand-danger);
+}

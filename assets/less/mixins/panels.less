@@ -1,0 +1,26 @@
+/*---------------------------------
+  MIXINS - PANELS
+-----------------------------------*/
+.panel-colorize(@color){
+	
+	> .panel-heading{
+		  .bg-styled-bordered(@color);
+		  
+		  .panel-actions a{
+			  	.opacity(0.75);
+			  	
+			  	&:hover,
+			  	&:focus{
+			  		color: @inverse-text-color !important;
+			  		.opacity(1);
+			  	}
+			}
+	}
+  
+}
+
+.panel-footer-colorize(@color){
+	> .panel-footer{
+		  .bg-darken(@color);
+	}
+}

@@ -1,0 +1,136 @@
+/*---------------------------------
+  BUTTONS
+-----------------------------------*/
+.btn{
+  .text-shadow();
+}
+
+.input-group-lg > .input-group-addon{
+	font-size: 15px;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+  outline: none;
+}
+
+.btn-default{
+  @light: lighten(@gray-lighter, 16%);
+  @dark: @gray-lighter;
+  
+  .text-shadow(#fff);
+  border-color: @btn-default-border;
+  #gradient > .vertical(@light, @dark);
+  
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&{
+    border-color: @btn-default-border;
+    #gradient > .vertical(lighten(@light, 5%), lighten(@dark, 5%));
+  }
+  
+  &.disabled,
+  &[disabled]{
+    #gradient > .vertical(darken(@light, 12%), darken(@dark, 12%));
+    color:lighten(@btn-default-color, 12%);
+  }
+}
+
+.btn-primary {
+  @light: lighten(@btn-primary-bg,8%);
+  @dark: darken(@btn-primary-bg,8%);
+  
+  .button-gradient(@light, @dark);
+}
+// Success appears as green
+.btn-success {
+  @light: lighten(@btn-success-bg,5%);
+  @dark: darken(@btn-success-bg,11%);
+  
+  .button-gradient(@light, @dark);
+}
+// Info appears as blue-green
+.btn-info {
+  @light: lighten(@btn-info-bg,4%);
+  @dark: darken(@btn-info-bg,12%);
+  
+  .button-gradient(@light, @dark);
+}
+// Warning appears as orange
+.btn-warning {
+  @light: lighten(@btn-warning-bg,5%);
+  @dark: darken(@btn-warning-bg,14%);
+  
+  .button-gradient(@light, @dark);
+}
+// Danger and error appear as red
+.btn-danger {
+  @light: lighten(@btn-danger-bg,8%);
+  @dark: darken(@btn-danger-bg,8%);
+  
+  .button-gradient(@light, @dark);
+}
+
+body .btn-facebook, body .btn-facebook:active, body .btn-facebook:hover, body .btn-facebook:focus,
+body .btn-twitter,
+body .btn-twitter:active,
+body .btn-twitter:hover,
+body .btn-twitter:focus,
+body .btn-gplus,
+body .btn-gplus:active,
+body .btn-gplus:hover,
+body .btn-gplus:focus {
+	color: #FFF;
+	font-weight: 300;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+body .btn-facebook, body .btn-facebook:focus {
+	background: #3B5998;
+	border: 1px solid #37538D;
+}
+
+body .btn-facebook:hover {
+	background: #4162a7;
+	border-color: #3d5c9c;
+}
+
+body .btn-facebook:active {
+	background: #37538d;
+	border-color: #334d82;
+}
+
+body .btn-twitter, body .btn-twitter:focus {
+	background: #55ACEE;
+	border: 1px solid #47A5ED;
+}
+
+body .btn-twitter:hover {
+	background: #63b3ef;
+	border-color: #55acee;
+}
+
+body .btn-twitter:active {
+	background: #47a5ed;
+	border-color: #399eec;
+}
+
+body .btn-gplus, body .btn-gplus:focus {
+	background: #D95232;
+	border: 1px solid #D44927;
+}
+
+body .btn-gplus:hover {
+	background: #dc6143;
+	border-color: #da5635;
+}
+
+body .btn-gplus:active {
+	background: #d04727;
+	border-color: #c34324;
+}

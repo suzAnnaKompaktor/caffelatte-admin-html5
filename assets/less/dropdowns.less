@@ -1,0 +1,60 @@
+/*---------------------------------
+  DROPDOWNS
+-----------------------------------*/
+.dropdown-menu{
+  right:0;
+  -webkit-border-top-right-radius:0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  margin:0;
+  padding:0;
+  min-width: 180px;
+  width: auto;
+  .light-shadow;
+  border-color:@border-color;
+}
+
+.header .dropdown-menu{border-top:none;}
+
+.dropdown-menu > li > a {
+  .unset-border;
+  height:auto;
+  padding:@half-space @default-space;
+  white-space:normal;
+  
+  &:hover,
+  &:focus {
+    .dark-bg;
+  }
+  
+  i.fa{
+    margin-right:@third-space;
+  }
+}
+
+.custom-caret {
+  margin-left:@half-space;
+  
+  &:before{
+    content: "\f0d7";
+  }
+}
+
+.open > a .custom-caret:before {
+  content: "\f0d8";
+}
+
+.dropup .dropdown-menu{
+   -webkit-border-bottom-right-radius:0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  .round-border-top;
+  .drop-shadow(0, -1px);
+  margin-bottom: 0;
+}

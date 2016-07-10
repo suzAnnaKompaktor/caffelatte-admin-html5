@@ -1,0 +1,176 @@
+/*---------------------------------
+  FORMS
+-----------------------------------*/
+.field-prefix,
+.field-suffix{
+	color: @text-muted;
+}
+
+/* Errors */
+.has-error label.error{
+	line-height: 2em;
+}
+label.error{
+	margin-bottom: 0;
+	display: inline;
+}
+label.error,
+span.required{
+	.text-emphasis-variant(@state-danger-text);
+}
+div.messages.error ul {
+	display: none;
+	list-style: none;
+	margin:-@default-space -@default-space @default-space -@default-space;
+	padding: @default-space;
+	border-bottom: 1px solid @state-danger-border;
+	background: @state-danger-bg;
+}
+
+div.messages.error ul label.error {
+	display: block;
+	padding-left: 22px;
+	position: relative;
+}
+
+div.messages.error ul label.error:before {
+	font-family: 'FontAwesome';
+	content: '\f00d';
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 16px;
+	color: @state-danger-text;
+	display: inline-block;
+}
+
+/* Form items */
+.form-control{
+  .inner-shadow(0, 2px, 3px);
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+  color:@gray;
+  .unset-shadow;
+}
+
+.control-label{
+	font-weight:normal;
+}
+
+.input-group-addon.btn-primary,
+.input-group-addon.btn-info,
+.input-group-addon.btn-success,
+.input-group-addon.btn-warning,
+.input-group-addon.btn-danger{
+	color: @inverse-text-color;
+}
+ 
+.form-description,
+.help-text,
+.help-block,
+.help-inline{
+  color:@gray-light;
+  padding:5px 0;
+  padding:0.5rem 0;
+  margin-top: 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  .light-bg;
+  .border;
+}
+
+select{
+  .bold;
+  cursor:pointer;
+  
+  option{
+    line-height:1.3em;
+  }
+}
+
+fieldset{
+  .border-bottom;
+}
+
+legend{
+  font-size:@font-size-base;
+  
+  a{color:@gray;}
+  
+  .fieldset-legend{
+     color:@gray;
+     text-transform:uppercase;
+  }
+  
+  .fa + .fieldset-legend{
+    padding-left:@half-space;
+  }
+  
+  .summary{
+    display:block;
+    font-weight:normal;
+    font-size:@font-size-small;
+    color:@gray;
+    text-transform:none;
+  }
+}
+
+fieldset.collapsible legend{
+  cursor:pointer;
+}
+fieldset.collapsed legend{
+    width:100%;
+    
+    .summary{
+      display:inline-block;
+    }
+}
+
+fieldset.collapsed .fieldset-wrapper{
+  display:none;
+}
+
+/*---------------------------------
+  HELP TEXTS
+-----------------------------------*/
+.popover-form-description{
+  min-width:280px;
+  
+  .fa{
+    font-size:1.3em;
+    color:@brand-info;
+    padding-right:@third-space;
+  }
+}
+
+.form-description-icon{
+  padding-left:@half-space;
+  cursor:pointer;
+
+  .fa{color:@brand-info;}
+}
+
+.form-description-wrapper{
+  position: relative;
+  display: table;
+}
+
+.form-description-wrapper input{
+  display: table-cell;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.form-description-wrapper .form-description-icon{
+  display: table-cell;
+  position: relative;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+}

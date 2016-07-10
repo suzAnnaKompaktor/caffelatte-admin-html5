@@ -1,0 +1,10 @@
+/*---------------------------------
+  MIXINS - MODALS
+-----------------------------------*/
+.modal-colorize(@color){
+	.modal-icon .fa{color: @color;}
+  	.panel{.panel-colorize(@color)};
+	.modal-header{
+		.bg-styled-bordered(@color);
+	}
+}

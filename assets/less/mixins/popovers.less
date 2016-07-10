@@ -1,0 +1,60 @@
+/*---------------------------------
+  MIXINS - POPOVERS
+-----------------------------------*/
+.popover-notification-variant(@color){
+	@darken: darken(@color, 8%);
+  	@border-color: spin(@darken, -10);
+	.popover-variant(@color; @border-color; @inverse-text-color);
+	
+	a{
+	  	.inverse-text-color;
+	  	.opacity(0.8);
+	  	
+	  	&:hover,
+	  	&:focus{
+	  		.opacity(1);
+	  	}
+  }
+}
+
+.popover-variant(@background; @border-color; @text-color) {
+  @popover-bg:                          @background;
+  @popover-border-color:                @border-color;
+  @popover-arrow-color:                 @popover-bg;
+  @popover-arrow-outer-color:           @popover-border-color;
+  color: @text-color;
+
+  background-color: @popover-bg;
+  border: 1px solid @popover-fallback-border-color;
+  border: 1px solid @popover-border-color;
+
+  a {
+    color: darken(@text-color, 10%);
+  }
+  
+   &.top > .arrow {
+    border-top-color: @popover-arrow-outer-color;
+    &:after {
+      border-top-color: @popover-arrow-color;
+    }
+  }
+  &.right > .arrow {
+    border-right-color: @popover-arrow-outer-color;
+    &:after {
+      border-right-color: @popover-arrow-color;
+    }
+  }
+  &.bottom > .arrow {
+    border-bottom-color: @popover-arrow-outer-color;
+    &:after {
+      border-bottom-color: @popover-arrow-color;
+    }
+  }
+
+  &.left > .arrow {
+    border-left-color: @popover-arrow-outer-color;
+    &:after {
+      border-left-color: @popover-arrow-color;
+    }
+  }
+}

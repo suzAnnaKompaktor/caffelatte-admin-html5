@@ -1,0 +1,16 @@
+/*---------------------------------
+  MIXINS - WIZARD
+-----------------------------------*/
+.wizard-tabs-colorize(@color){
+	.wizard-tabs ul > li.active > a{
+		&,
+		&:hover,
+		&:focus{
+			color: @color;
+		}
+		
+		.badge {
+			background-color: @color;
+		}
+	}
+}

@@ -1,0 +1,75 @@
+/*---------------------------------
+  ALERTS
+-----------------------------------*/
+.alert{.light-shadow;}
+.alert-default{
+  .border;
+  .light-bg;
+}
+.alert-primary {
+  .alert-variant(@state-primary-bg; @state-primary-border; @state-primary-text);
+  .alert-link {
+    color: @link-color;
+  }
+}
+.alert-dark{
+  .border;
+  .dark-bg;
+}
+/* Icons */
+.alert .fa{
+	width: 1.28571429em;
+	
+	&.text-muted{color: @text-muted;}
+	&.text-primary{.text-emphasis-variant(@brand-primary);}
+	&.text-success{.text-emphasis-variant(@state-success-text);}
+	&.text-info{.text-emphasis-variant(@state-info-text);}
+	&.text-warning{.text-emphasis-variant(@state-warning-text);}
+	&.text-danger{.text-emphasis-variant(@state-danger-text);}
+	&.text-dark{.text-dark;}
+}
+.alert-dark .fa,
+.alert-default .fa{color: @state-info-text;}
+.alert-primary .fa{color:@state-primary-text;}
+.alert-success .fa{color: @state-success-text;}
+.alert-info .fa{color: @state-info-text;}
+.alert-warning .fa{color: @state-warning-text;}
+.alert-danger .fa{color: @state-danger-text;}
+
+.notification{
+  .alert;
+  .inverse-text-color;
+  .inverse-bg;
+  border-color:@border-color-inverse;
+  @darken: darken(@inverse-bg, 10%);
+  .inner-shadow(rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  
+  a{
+  	color: @link-color;
+  	
+  	&:hover,
+  	&:focus{
+  		color: @link-hover-color;
+  	}
+  }
+  
+  i.fa,
+  .close{
+  	.inverse-text-color;
+  }
+}
+.alert-primary.notification{
+	.well.primary;
+}
+.alert-info.notification{
+	.well.info;
+}
+.alert-success.notification{
+	.well.success;
+}
+.alert-warning.notification{
+	.well.warning;
+}
+.alert-danger.notification{
+	.well.danger;
+}

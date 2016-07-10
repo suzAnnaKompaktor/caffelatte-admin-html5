@@ -1,0 +1,209 @@
+/*---------------------------------
+  COLORS
+-----------------------------------*/
+@gray-base:              #000;
+@gray-darker:            #1d1d1d;
+@gray-dark:              #393c3d;  
+@gray:                   lighten(@gray-dark, 20%); /* #6A7072 */
+@gray-light:             #999;
+@gray-lighter:           @darker-bg;  /* #dfdfdf */
+
+@brand-primary:         #FC730A;
+@brand-success:         #99bb12;
+@brand-info:            #4D99E0;
+@brand-warning:         #F5B62A;
+@brand-danger:          #A31905;
+
+/** Background color for `<body>`. */
+@body-bg:               #f7f7f7;
+
+@link-hover-color:      lighten(@link-color, 15%); /* #FD9E56 */
+
+/*---------------------------------
+  BORDER
+-----------------------------------*/
+@border-size: 1px;
+@border-style: solid;
+
+/*---------------------------------
+  TYPOGRAPHY
+-----------------------------------*/
+@font-family-sans-serif:  "Open Sans", Helvetica, arial, verdana, sans-serif;
+@font-size-base:          14px;
+@font-size-large:         16px;
+
+@headings-color:          @gray;
+
+/*---------------------------------
+  COMPONENTS
+-----------------------------------*/
+@padding-base-vertical:     7px;
+@padding-base-horizontal:   14px;
+
+@padding-small-vertical:    round(@padding-base-vertical * 0.6);
+@padding-small-horizontal:  round(@padding-base-horizontal * 0.6);
+
+@padding-xs-vertical:       round(@padding-base-vertical * 0.4);
+@padding-xs-horizontal:     round(@padding-base-horizontal * 0.4);
+
+@line-height-large:         1.5;
+
+@border-radius-base:        5px;
+@border-radius-large:       round(@border-radius-base * 1.5);
+@border-radius-small:       round(@border-radius-base * 0.75);
+
+/*---------------------------------
+  TABLES
+-----------------------------------*/
+@table-cell-padding:            @third-space;
+@table-condensed-cell-padding:  @quarter-space;
+@table-bg-accent:               @body-bg;
+@table-bg-hover:                @dark-bg;
+@table-border-color:            @border-color;
+
+/*---------------------------------
+  BUTTONS
+-----------------------------------*/
+@btn-default-color:              @text-color;
+@btn-default-border:             @border-color-darker;
+
+/*---------------------------------
+  NAVS
+-----------------------------------*/
+@nav-link-padding:                          @half-space @default-space;
+@nav-link-hover-bg:                         @darker-bg;
+
+/*---------------------------------
+  TABS
+-----------------------------------*/
+@nav-tabs-border-color:                     @border-color-dark;
+@nav-tabs-link-hover-border-color:          @border-color-dark;
+
+@nav-tabs-active-link-hover-color:          @text-color;
+@nav-tabs-active-link-hover-border-color:   @border-color-dark;
+
+@nav-tabs-justified-link-border-color:      @border-color-dark;
+
+/*---------------------------------
+  FORMS
+-----------------------------------*/
+@input-color:                    @text-color;
+@input-border:                   @border-color-darker;
+@input-color-placeholder:        @gray-light;
+@legend-border-color:            none;
+/** Border color for inputs on focus */
+@input-border-focus:             @alt-link-hover-color;
+
+/** Large `.form-control` height */
+@input-height-large:             (ceil(15 * @line-height-large) + (@padding-large-vertical * 2) + 2);
+/** Small `.form-control` height */
+@input-height-small:             (floor(13 * @line-height-small) + (@padding-small-vertical * 2) + 2);
+
+@input-group-addon-bg:           darken(@dark-bg, 3%);
+/*---------------------------------
+  Z-INDEX
+-----------------------------------*/
+@zindex-navbar:            1000;
+@zindex-dropdown:          1040;
+@zindex-popover:           1060;
+@zindex-tooltip:           1070;
+@zindex-navbar-fixed:      1030;
+@zindex-modal-background:  1050;
+@zindex-modal:             1060;
+
+/*---------------------------------
+  SCREEN SIZES
+-----------------------------------*/
+@screen-xl:                  1600px;
+@screen-xl-min:              @screen-xl;
+
+@screen-lg-max:				(@screen-xl-min - 1);
+
+/*---------------------------------
+  FORMS STATES AND ALERTS
+-----------------------------------*/
+@state-primary-text:             darken(@brand-primary, 8%);
+@state-primary-bg:               lighten(spin(@brand-primary, 8), 43%);
+@state-primary-border:           darken(spin(@state-primary-bg, -8), 5%);
+
+@state-info-text:                darken(@brand-info, 8%);
+@state-info-bg:                  lighten(spin(@brand-info, 8), 35%);
+@state-info-border:              darken(spin(@state-info-bg, -10), 7%);
+
+@state-success-text:             darken(@brand-success, 8%);
+@state-success-bg:               lighten(spin(@brand-success, 8), 49%);
+@state-success-border:           darken(spin(@state-success-bg, -10), 30%);
+
+@state-warning-text:             darken(@brand-warning, 8%);
+@state-warning-bg:               lighten(@brand-warning, 35%);
+@state-warning-border:           darken(spin(@state-warning-bg, -10), 5%);
+
+@state-danger-text:              @brand-danger;
+@state-danger-bg:                lighten(@brand-danger, 60%);
+@state-danger-border:            darken(spin(@state-danger-bg, -10), 5%);
+
+/*---------------------------------
+  TOOLTIP
+-----------------------------------*/
+@tooltip-bg:                  @inverse-bg;
+@tooltip-opacity:             .95;
+@tooltip-arrow-width:         @arrow-size;
+
+/*---------------------------------
+  POPOVER
+-----------------------------------*/
+@popover-bg:                          @light-bg;
+@popover-border-color:                @border-color;
+@popover-fallback-border-color:       @border-color;
+@popover-title-bg:                    @dark-bg;
+@popover-arrow-width:                 @arrow-size;
+
+/*---------------------------------
+  LABEL
+-----------------------------------*/
+@label-default-bg:            		  @inverse-bg;
+
+/*---------------------------------
+  BREADCRUMBS
+-----------------------------------*/
+@breadcrumb-padding-vertical:   0;
+@breadcrumb-padding-horizontal: @default-space;
+@breadcrumb-bg:                 transparent;
+@breadcrumb-color:              @inverse-text-color;
+@breadcrumb-active-color:       @inverse-text-highlight-color;
+/*---------------------------------
+  PROGRESS BARS
+-----------------------------------*/
+
+@progress-bg:                 @dark-bg;
+
+/*---------------------------------
+  WELLS
+-----------------------------------*/
+@well-bg:                     @dark-bg;
+@well-border:                 @border-color;
+
+/*---------------------------------
+  CLOSE
+-----------------------------------*/
+@close-color:                 @text-color;
+
+/*---------------------------------
+   TYPE
+-----------------------------------*/
+@blockquote-font-size:        @font-size-base;
+/* Blockquote border color */
+@blockquote-border-color:     @border-color;
+/* Page header border color */
+@page-header-border-color:    @border-color;
+@abbr-border-color:           @border-color;
+@hr-border:                   @border-color;
+
+/*---------------------------------
+   PAGINATION
+-----------------------------------*/
+
+@pagination-border:			@border-color;
+@pagination-hover-bg: 		@brand-primary;
+@pagination-hover-color:	@inverse-text-color;
+@pager-border-radius:       @default-space;

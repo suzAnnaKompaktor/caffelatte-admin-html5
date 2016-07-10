@@ -1,0 +1,55 @@
+/*---------------------------------
+  IMAGE
+-----------------------------------*/
+.img-thumbnail,
+.thumbnail{
+	border-color: @border-color;
+	border-radius: 0;
+	.light-bg;
+	.drop-shadow-curved;
+}
+
+a.img-thumbnail{
+	display: inline-block;
+	overflow: hidden;
+	
+	img{
+		.transition(all 0.1s linear);
+	}
+	
+	&:hover{
+		img{
+			.scale(1.1);
+		}
+	}
+}
+
+.thumbnail-gallery .img-thumbnail{
+	position: relative;
+	
+	.zoom{
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: @third-space @half-space;
+		font-size: 15px;
+		font-size: 1.5rem;
+		color:@inverse-text-color;
+		background-color: @dark-inverse-bg;
+		border-radius: 0 0 0 @border-radius-base;
+		.strong-shadow;
+		cursor: pointer;
+		.transition-transform(0.1s linear 0.1s);
+		.translate(100%, 0);
+	}
+	
+	&:hover{
+		.zoom{
+			.translate(0, 0);
+		}
+	}
+}
+
+.owl-carousel .item{
+	margin:5px;
+}

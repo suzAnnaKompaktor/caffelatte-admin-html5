@@ -1,0 +1,89 @@
+/*---------------------------------
+  POPOVERS
+-----------------------------------*/
+.popover {
+  .popover-shadow;
+  .round-border;
+  
+  i.fa{
+  	&.text-muted{color: @text-muted;}
+	&.text-primary{.text-emphasis-variant(@brand-primary);}
+	&.text-success{.text-emphasis-variant(@state-success-text);}
+	&.text-info{.text-emphasis-variant(@state-info-text);}
+	&.text-warning{.text-emphasis-variant(@state-warning-text);}
+	&.text-danger{.text-emphasis-variant(@state-danger-text);}
+	&.text-dark{.text-dark;}
+  }
+}
+.popover-title {
+  border-color:@border-color;
+}
+.popover-content {
+  padding: @half-space @default-space;
+}
+
+.popover.primary {
+  .popover-variant(@state-primary-bg; @state-primary-border; @state-primary-text);
+  
+  i.fa{
+  	color:@state-primary-text;
+  }
+}
+.popover.success {
+  .popover-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+}
+.popover.info {
+  .popover-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
+}
+.popover.warning {
+  .popover-variant(@alert-warning-bg; @alert-warning-border; @alert-warning-text);
+}
+.popover.danger {
+  .popover-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+}
+
+.popover.dark {
+  .popover-variant(@dark-bg; @popover-border-color; @text-color);
+  
+  i.fa{
+  	color: @state-info-text;
+  }
+  
+  a{
+  	color:@link-color;
+  }
+}
+
+.popover.notification{
+  .popover-variant(@inverse-bg; @border-color-inverse; @inverse-text-color);
+  .strong-shadow;
+  .unset-padding;
+  
+  a{
+  	color: @link-color;
+  	
+  	&:hover,
+  	&:focus{
+  		color: @link-hover-color;
+  	}
+  }
+  
+  i.fa{
+  	.inverse-text-color;
+  }
+}
+.popover.primary.notification{
+	.popover-notification-variant(@brand-primary);
+}
+.popover.info.notification{
+	.popover-notification-variant(@brand-info);
+}
+.popover.success.notification{
+	.popover-notification-variant(@brand-success);
+}
+.popover.warning.notification{
+	.popover-notification-variant(darken(@brand-warning, 7%));
+}
+.popover.danger.notification{
+	.popover-notification-variant(@brand-danger);
+}

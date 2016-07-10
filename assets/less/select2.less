@@ -1,0 +1,173 @@
+/*---------------------------------
+  SELECT2
+-----------------------------------*/
+/* Custom inverse style */
+.select2-drop-active.inverse,
+.select2-drop.inverse {
+  .inverse-bg;
+  border-color: @border-color-inverse;
+  .inverse-text-color;
+  .strong-shadow;
+}
+
+.inverse .select2-results .select2-highlighted {
+    .bg-primary;
+}
+
+.inverse .select2-results .select2-no-results, 
+.inverse .select2-results .select2-searching, 
+.inverse .select2-results .select2-ajax-error, 
+.inverse .select2-results .select2-selection-limit{
+	background: transparent;
+}
+
+/* Override default select2 styles */
+.select2-container.form-control {
+  .unset-bg-color;
+  .unset-border;
+  .block;
+  .unset-padding;
+}
+
+.select2-container .select2-choice{
+  height: @input-height-base;
+  line-height: @input-height-base;
+  padding:@padding-base-vertical 0 @padding-base-vertical @padding-base-horizontal;
+  .border(@input-border);
+  .round-border;
+  color:@text-color;
+  .bold;
+   #gradient > .vertical(@light-bg, darken(@light-bg, 5%));
+}
+
+.select2-container.select2-dropdown-open .select2-choice{
+  background:@light-bg;
+}
+.select2-container .select2-choice > .select2-chosen{line-height:normal; margin-right:@input-height-base;}
+.select2-container .select2-choice .select2-arrow, 
+.select2-container .select2-choice div{
+  .border-left(@input-border);
+  background:none;
+  width:@input-height-base;
+  text-align:center;
+}
+
+.select2-container .select2-choice .select2-arrow b{
+  background:none;
+  .add-icon("\f0d7");
+}
+
+.select2-dropdown-open .select2-choice .select2-arrow b {
+   .add-icon("\f0d8");
+}
+
+.select2-container-active .select2-choice,
+.select2-container-multi.select2-container-active .select2-choices {
+  .select2-focus();
+  .transition(border-color ease-in-out .15s box-shadow ease-in-out .15s);
+}
+
+.select2-drop-active {
+  border-color: @alt-link-color;
+  .select2-focus();
+  .round-border-bottom;
+}
+
+.select2-drop-auto-width,
+.select2-drop.select2-drop-above.select2-drop-active {
+  border-top-color: @alt-link-color;
+}
+
+.select2-drop.select2-drop-above.select2-drop-active{
+  .select2-focus();
+  border-radius: @border-radius-base @border-radius-base 0 0;
+}
+
+.select2-search input{
+  .border(@input-border);
+  .inner-shadow;
+  .round-border(@border-radius-small);
+}
+
+.select2-results .select2-highlighted {
+    background: @alt-link-color;
+}
+
+.select2-focus(@color: @input-border-focus) {
+  @color-rgba: rgba(red(@color), green(@color), blue(@color), .6);
+  border-color: @color;
+  outline: 0;
+  .box-shadow(~"inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px @{color-rgba}");
+}
+
+.select2-container.input-lg .select2-choice,
+.form-group-lg .select2-container .select2-choice{
+  height: @input-height-large;
+  line-height: @line-height-large;
+  border-radius: @input-border-radius-large;
+  padding:@padding-large-vertical 0 @padding-large-vertical @padding-large-horizontal;
+  font-size:@font-size-large;
+}
+
+.select2-container.input-lg .select2-choice > .select2-chosen,
+.form-group-lg .select2-container .select2-choice > .select2-chosen{margin-right:@input-height-large;}
+.select2-container.input-lg .select2-choice .select2-arrow, 
+.select2-container.input-lg .select2-choice div,
+.form-group-lg .select2-container .select2-choice .select2-arrow, 
+.form-group-lg .select2-container .select2-choice div{
+  width:@input-height-large;
+}
+.select2-container.input-lg .select2-choice .select2-arrow,
+.form-group-lg .select2-container .select2-choice .select2-arrow{
+  padding-top:@padding-large-vertical;
+}
+
+.select2-container.input-sm .select2-choice,
+.form-group-sm .select2-container .select2-choice{
+  height: @input-height-small;
+  line-height: @line-height-small;
+  border-radius: @input-border-radius-small;
+  padding:@padding-small-vertical 0 @padding-small-vertical @padding-small-horizontal;
+  font-size:@font-size-small;
+}
+
+.select2-container.input-sm .select2-choice > .select2-chosen,
+.form-group-sm .select2-container .select2-choice > .select2-chosen{margin-right:@input-height-small;}
+.select2-container.input-sm .select2-choice .select2-arrow, 
+.select2-container.input-sm .select2-choice div,
+.form-group-sm .select2-container .select2-choice .select2-arrow, 
+.form-group-sm .select2-container .select2-choice div{
+  width:@input-height-small;
+}
+.select2-container.input-sm .select2-choice .select2-arrow,
+.form-group-sm .select2-container .select2-choice .select2-arrow{
+  padding-top:@padding-small-vertical;
+}
+
+.select2-container-multi .select2-choices{
+	.inner-shadow(0, 2px, 3px);
+	.border(@input-border);
+	.round-border(@border-radius-base);
+	min-height: 36px;
+}
+
+.select2-container-multi .select2-choices .select2-search-choice{
+	background: @brand-info;
+	color: @inverse-text-color;
+	.unset-shadow;
+	.unset-border;
+}
+
+.select2-search-choice-close {
+	background: none;
+	margin-top: -8px;
+	top: 50%;
+}
+
+.select2-search-choice-close:after {
+	content: 'x';
+	font-size: 10px;
+	color: @inverse-text-color;
+	padding: 0 4px;
+	.bold;
+}

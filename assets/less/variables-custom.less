@@ -1,0 +1,54 @@
+/*---------------------------------
+  CUSTOM SPACE DEFINITIONS
+-----------------------------------*/
+@default-space:         15px;
+@double-space:          @default-space * 2;
+@triple-space:          @default-space * 3;
+@half-space:            round(@default-space / 2);
+@third-space:           round(@default-space / 3);
+@quarter-space:         round(@default-space / 4);
+@arrow-size:            @half-space;
+
+/*---------------------------------
+  CUSTOM SHADOWS DEFINITIONS
+-----------------------------------*/
+@shadow-position: 0;
+@shadow-distance: 1px;
+@shadow-blur: 2px;
+
+@textshadow-position: 0;
+@textshadow-distance: 1px;
+@textshadow-blur: 0;
+/*---------------------------------
+  CUSTOM COLOR DEFINITIONS
+-----------------------------------*/
+@inverse-text-color:    #fff;
+@inverse-text-highlight-color:    darken(@inverse-text-color, 10%); /* #E6E6E6 */
+
+@alt-link-color:  @brand-info;
+@alt-link-hover-color:  lighten(@alt-link-color, 15%); /* #8EBEEB */
+
+/* Light background (header) */
+@light-bg:              lighten(@body-bg, 3%); /* #fff */
+/* For example: sidebar */
+@dark-bg:               darken(@body-bg, 3%); /* #efefef */
+/* For example content header */
+@darker-bg:             darken(@body-bg, 9.5%); /* #dfdfdf */
+/* Top section */
+@inverse-bg:            #535759;
+@dark-inverse-bg:       darken(@inverse-bg, 5%);
+@light-inverse-bg:      lighten(@dark-inverse-bg, 20%); /* #7E8484 */
+
+/* Base border color */
+@border-color:          #dbdbdb;
+/* Top section */
+@border-color-inverse:  #1d1d1d;
+/* Menu bar */
+@border-color-light:    lighten(@border-color, 3%); /* #E3E3E3 */
+/*  Tabs, Content header */
+@border-color-dark:     darken(@border-color, 5%);  /* #CECECE */
+ /* Forms, Secondary tabs */
+@border-color-darker:   darken(@border-color, 10%);  /* #C2C2C2 */
+
+@light-shadow:                 #eaeaea;
+@text-shadow:                  #ffffff;

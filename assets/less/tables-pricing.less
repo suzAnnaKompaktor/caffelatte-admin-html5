@@ -1,0 +1,164 @@
+/*---------------------------------
+  PRICING TABLES
+-----------------------------------*/
+.pricing-table{
+	.plan{
+		.border;
+  		.light-shadow;
+  		.light-bg;
+  		text-align:center;
+  		margin-bottom: @default-space;
+  		
+  		h3{
+  			padding: @double-space @default-space @default-space @default-space;
+  			margin: 0 0 50px 0;
+  			.bg-styled-bordered(@inverse-bg);
+  			.strong-shadow;
+  			
+  			span {
+  				display: block;
+  				height: 100px;
+				width: 100px;
+				border-radius: 100px;
+				margin: 20px auto -65px;
+				
+				@icon-color: darken(@inverse-bg, 5%);
+  				background: @icon-color;
+  				border-color:spin(darken(@icon-color, 5%), -8);
+				.strong-shadow;
+				
+  				strong{
+					.semi-bold;
+					font-size: 22px;
+					line-height:100px;
+					display: block;
+	  				height: 100px;
+					width: 100px;
+					border-radius: 100px;
+					@darken: darken(@inverse-bg, 10%);
+  					.box-shadow(inset @shadow-position 10px 10px rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  				}
+			}
+  		}
+  		
+  		.btn {
+			margin-top: @default-space;
+		}
+		
+		 ul {
+			list-style: none;
+			margin: @default-space 0 0 0;
+			padding: @default-space;
+			
+			> li{
+				padding: @half-space;
+				.border-top;
+			}
+		}
+	}
+	
+	.plan-primary {
+		h3{
+			.bg-primary-styled-bordered;
+  			span {
+  				@icon-color: spin(darken(@brand-primary, 10%), -3);
+  				background: @icon-color;
+  				border-color:spin(darken(@icon-color, 5%), -8);
+  				
+  				strong{
+  					@darken: darken(@icon-color, 8%);
+  					.box-shadow(inset @shadow-position 10px 10px rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  				}
+  			}
+  		}
+  		.btn{.btn-primary;}
+	}
+	.plan-info {
+		h3{
+			.bg-info-styled-bordered;
+  			span {
+  				@icon-color: spin(darken(@brand-info, 10%), -3);
+  				background: @icon-color;
+  				border-color:spin(darken(@icon-color, 5%), -8);
+  				
+  				strong{
+  					@darken: darken(@icon-color, 8%);
+  					.box-shadow(inset @shadow-position 10px 10px rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  				}
+  			}
+  		}
+  		.btn{.btn-info;}
+	}
+	.plan-success {
+		h3{
+			.bg-success-styled-bordered;
+  			span {
+  				@icon-color: spin(darken(@brand-success, 10%), -3);
+  				background: @icon-color;
+  				border-color:spin(darken(@icon-color, 5%), -8);
+  				
+  				strong{
+  					@darken: darken(@icon-color, 8%);
+  					.box-shadow(inset @shadow-position 10px 10px rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  				}
+  			}
+  		}
+  		.btn{.btn-success;}
+	}
+	.plan-warning {
+		h3{
+			.bg-warning-styled-bordered;
+  			span {
+  				@icon-color: spin(darken(@brand-warning, 10%), -3);
+  				background: @icon-color;
+  				border-color:spin(darken(@icon-color, 5%), -8);
+  				
+  				strong{
+  					@darken: darken(@icon-color, 8%);
+  					.box-shadow(inset @shadow-position 10px 10px rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  				}
+  			}
+  		}
+  		.btn{.btn-warning;}
+	}
+	.plan-danger {
+		h3{
+			.bg-danger-styled-bordered;
+  			span {
+  				@icon-color: spin(darken(@brand-danger, 10%), -3);
+  				background: @icon-color;
+  				border-color:spin(darken(@icon-color, 5%), -8);
+  				
+  				strong{
+  					@darken: darken(@icon-color, 8%);
+  					.box-shadow(inset @shadow-position 10px 10px rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+  				}
+  			}
+  		}
+  		.btn{.btn-danger;}
+	}
+	
+	.plan-ribbon-wrapper {
+		height: 88px;
+		overflow: hidden;
+		position: absolute;
+		right: 14px;
+		top: -1px;
+		width: 85px;
+		
+		 .plan-ribbon {
+			.rotate(45deg);
+
+			.gradient-dark;
+			.inverse-text-color;
+			.strong-shadow;
+			font-size: 14px;
+			left: -5px;
+			padding: 7px 0;
+			position: relative;
+			text-align: center;
+			top: 15px;
+			width: 120px;
+		}
+	}
+}

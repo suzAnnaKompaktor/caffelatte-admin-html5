@@ -1,0 +1,28 @@
+/*---------------------------------
+  WELLS
+-----------------------------------*/
+.well {
+  padding: @default-space;
+  margin-bottom: @default-space;
+  .inner-shadow;
+  blockquote {
+    border-color: @border-color-dark;
+    border-color: rgba(0,0,0,.15);
+  }
+}
+.well-lg{padding: @default-space * 1.5;}
+.well-sm{padding: @half-space;}
+
+.well.primary{.well-colorize(@brand-primary);}
+.well.success{.well-colorize(@brand-success);}
+.well.info{.well-colorize(@brand-info);}
+.well.warning{.well-colorize(@brand-warning);}
+.well.danger{.well-colorize(@brand-danger);}
+.well.dark{
+  .inverse-text-color;
+  .inverse-bg;
+  border-color:@border-color-inverse;
+  @darken: darken(@inverse-bg, 10%);
+  .inner-shadow(rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+}
+.well.light{.light-bg;}

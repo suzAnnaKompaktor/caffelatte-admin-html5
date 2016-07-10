@@ -1,0 +1,336 @@
+/*---------------------------------
+  TABS
+-----------------------------------*/
+.tabs {
+  margin-bottom: @default-space;
+}
+
+.tabs .tab-content{
+  .border-bottom;
+  .border-left;
+  .border-right;
+  padding:@default-space;
+}
+
+.tabs > .tab-content{
+	.light-bg;
+}
+
+.nav-tabs{
+  position:relative;
+  display: block;
+  .darker-bg;
+  .drop-shadow;
+  .border(@nav-tabs-border-color);
+  
+  > li {
+    /* Make the list-items overlay the bottom border*/
+    margin-bottom: -1px;
+    margin-top: -1px;
+
+    > a {
+      margin-right: -1px;
+      line-height: @line-height-base;
+      border-right: 1px solid @nav-tabs-border-color;
+      border-left: 1px solid @nav-tabs-border-color;
+      border-top: 1px solid @nav-tabs-border-color;
+      border-radius: 0;
+      #gradient > .vertical(lighten(@darker-bg, 3%), lighten(@darker-bg, 1%));
+      color:lighten(@text-color, 10%);
+      .semi-bold;
+      .transition(none);
+      
+      &:hover{
+      	.box-shadow(inset 0 0 @default-space 0 rgba(red(@inverse-bg), green(@inverse-bg), blue(@inverse-bg), 0.06));
+      	border-bottom:none;
+      }
+      
+      &:focus{
+      	.unset-shadow;
+      }
+    }
+    
+    &.active{
+      background: @nav-tabs-active-link-hover-bg;
+    }
+    
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+      	position:relative;
+        background: @light-bg;
+        
+        .badge{
+			background-color: @gray-light;
+		}
+      }
+    }
+    
+    &:first-child a{
+      &,
+      &:hover,
+      &:focus{
+    	border-left:none;
+      }
+    }
+  }
+}
+
+.nav-tabs:not(.nav-tabs-secondary) > li.active > a:after{
+	content: '';
+	position: absolute;
+	z-index:2;
+	bottom: -4px;
+	left:0;
+	height: 4px;
+	width: 100%;
+	background: @light-bg;
+}
+
+.panel-title .nav-tabs{
+	background: transparent;
+	display: inline-block;
+	border:none;
+	margin-right:1px;
+	margin-bottom: -6px;
+	.unset-shadow;
+	
+	> li {
+		> a{
+			border: 1px solid @nav-tabs-border-color;
+			height: 40px;
+		}
+		
+		&.active > a {
+			background: @light-bg;
+			border-color:@border-color;
+			border-bottom-color: @light-bg;
+		}
+	}
+}
+
+.nav-tabs.tabs-primary{.nav-tabs-colorize(primary);}
+.nav-tabs.tabs-info{.nav-tabs-colorize(info);}
+.nav-tabs.tabs-success{.nav-tabs-colorize(success);}
+.nav-tabs.tabs-warning{.nav-tabs-colorize(warning);}
+.nav-tabs.tabs-danger{.nav-tabs-colorize(danger);}
+
+.nav-tabs li[data-tabs-children].active{
+  background:@dark-bg;
+  .border-bottom(@dark-bg);
+ > a{
+      &,
+      &:hover,
+      &:focus {
+        background:@dark-bg;
+        border-bottom-color:@dark-bg;
+      }
+      
+       &:after{background:@dark-bg;}
+  }
+}
+
+.nav-tabs.nav-tabs-secondary{
+  display:block;
+  .dark-bg;
+  border-top:none;
+  border-bottom-color:@border-color;
+  .border-left(@nav-tabs-border-color);
+  .border-right(@nav-tabs-border-color);
+  padding:@third-space;
+  
+  > li {
+    margin-bottom:0;
+    margin-left:@third-space;
+    display:inline-block;
+    float:none;
+
+    // Actual tabs (as links)
+    > a {
+      line-height: normal;
+      .border;
+      padding:@half-space @default-space;
+      #gradient > .vertical(@dark-bg, darken(@dark-bg, 3%));
+      
+      &:hover {
+        #gradient > .vertical(darken(@dark-bg, 2%), darken(@dark-bg, 5%));
+      }
+    }
+    
+    &.active{}
+    
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background: @light-bg;
+        .border;
+        .arrow(@light-bg, bottom, @arrow-size, 50%, 1px, @border-color);
+      }
+    }
+  }
+}
+
+.tabs-bottom .nav-tabs{
+  .drop-shadow(0, -1px);
+  > li {
+  	
+  	>a{
+  		border-bottom: 1px solid @nav-tabs-border-color;
+  	}
+
+    &.active{
+  
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+  		border-bottom: 1px solid @nav-tabs-border-color;
+      }
+      
+      &:after{
+    	content: '';
+    	position: absolute;
+    	z-index:2;
+    	top: -4px;
+    	left:0;
+    	height: 4px;
+    	width: 100%;
+    	background: @light-bg;
+        }
+    }
+  }
+}
+
+.tabs.tabs-bottom .tab-content{
+  .border-top;
+  border-bottom:none;
+}
+.tabs-bottom .tabs {
+  margin-top: @default-space;
+}
+
+.tabs-vertical {
+  display: table;
+  width: 100%;
+}
+
+.tabs-vertical .nav-tabs {
+  display: table-cell;
+  height: 100%;
+  float: none;
+  padding: 0;
+  vertical-align: top;
+  .drop-shadow(1px, 0);
+  
+   > li {
+      display: block;
+      width:100%;
+      margin-top: 0;
+      margin-bottom: 0;
+      
+      > a{
+        display: block;
+        border-left: none;
+        border-top: none;
+        border-bottom: 1px solid @nav-tabs-border-color;
+        line-height:normal;
+        padding-top: @half-space + @third-space;
+        padding-bottom: @half-space + @third-space;
+      }
+      
+      &.active{}
+      
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          position:relative;
+          border-right:none;
+          border-left:none;
+          border-top:none;
+        }
+        
+        &:after{
+			top: 0;
+			bottom:0;
+			right:-3px;
+			left:auto;
+			height: 100%;
+			width: 3px;
+		}
+      }
+   }
+}
+
+.tabs.tabs-vertical .tab-content{
+  display: table-cell;
+  .border-top;
+  border-left:none;
+}
+
+.nav.nav-list{
+  .light-shadow;
+  .border;
+  .round-border;
+  
+  > li{
+    > a{
+      padding-top: @third-space;
+      padding-bottom: @third-space;
+      .border-bottom;
+      
+      &:hover{
+        .dark-bg;
+      }
+    }
+    
+    &.active{
+      > a{
+        .bg-primary;
+      }
+    }
+    
+    &:last-child{
+    	> a{
+    		border-bottom: none;
+    	}
+    }
+    
+    ul{
+      border-top:none;
+      border-left:none;
+      border-right:none;
+      
+      > li > a{
+        padding-left:@double-space;
+      }
+    }
+  }
+}
+
+/* Content header tabs */
+.primary-tabs{margin:0;}
+.primary-tabs .nav-tabs{
+	border-color:@border-color-dark;
+	border-bottom:none;
+}
+.primary-tabs .nav-tabs > li > a{
+  height:@contentHeaderHeight;
+  line-height:@contentHeaderHeight;
+  padding-top:0;
+  padding-bottom:0;
+  border-right-color:@border-color-dark;
+  border-left-color:@border-color-dark;
+}
+.primary-tabs .nav-tabs > li:first-child > a{border-left:none;}
+.primary-tabs .nav-tabs > li.active > a{
+  .base-bg;
+  &:focus,
+  &:hover{.base-bg; border-bottom:none;}
+  &:after{
+  	.base-bg;
+  }
+}

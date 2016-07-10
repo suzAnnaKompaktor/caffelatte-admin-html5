@@ -1,0 +1,73 @@
+/*---------------------------------
+  PROGRESS BARS
+-----------------------------------*/
+.progress {
+  .round-border(8px);
+}
+
+.progress.dark {
+  @lighten: lighten(@inverse-bg, 20%);
+  background-color:@lighten;
+  @darken: darken(@lighten, 20%);
+  .inner-shadow(rgba(red(@darken), green(@darken), blue(@darken), 0.8));
+}
+
+.progress-rounded .progress-bar{
+  .round-border(8px);
+}
+
+.progress-xs{
+  height:@half-space;
+  .round-border();
+  
+  .progress-bar{
+    line-height:@half-space;
+    font-size:@half-space;
+  }
+}
+
+.progress-sm{
+  height:10px;
+  .round-border();
+  
+  .progress-bar{
+    line-height:10px;
+    font-size:10px;
+  }
+}
+
+.progress-xs.progress-rounded .progress-bar,
+.progress-sm.progress-rounded .progress-bar{
+  .round-border();
+}
+
+.progress-md{
+  height:13px;
+  
+  .progress-bar{
+    line-height:13px;
+    font-size:13px;
+  }
+}
+
+.progress-lg{
+  height:16px;
+  
+  .progress-bar{
+    line-height:16px;
+    font-size:14px;
+  }
+}
+
+.progress-xl{
+  height:20px;
+  
+  .progress-bar{
+    line-height:20px;
+    font-size:18px;
+  }
+}
+
+.progress-bar-dark{
+  .inverse-bg;
+}

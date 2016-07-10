@@ -1,0 +1,19 @@
+/*---------------------------------
+  MIXINS - WIDGETS
+-----------------------------------*/
+.widget-colorize(@color){
+  .panel-body{
+  	  .bg-styled-bordered(@color);
+  	    
+	  .summary-footer{
+	  	.bg-darken(@color);
+	  	
+	  	.change{.inverse-text-color; .opacity(0.9);}
+	  }
+  }
+  
+  .widget-icon,
+  .widget-icon i{
+  	color: spin(darken(@color, 12%), -3);
+  }
+}

@@ -1,0 +1,30 @@
+/*---------------------------------
+  MIXINS - BUTTONS
+-----------------------------------*/
+.button-variant(@color; @background; @border) {
+  &.disabled,
+  &[disabled]{
+    color:darken(@color, 10%);
+    .opacity(0.8);
+  }
+}
+
+.button-gradient(@light, @dark){
+  .text-shadow(darken(@dark,20%));
+  border-color: darken(@dark,2%);
+  #gradient > .vertical(@light, @dark);
+  
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > .dropdown-toggle&{
+    border-color: lighten(@dark,2%);
+    #gradient > .vertical(lighten(@light, 5%), lighten(@dark, 5%));
+  }
+  
+  &.disabled,
+  &[disabled]{
+    #gradient > .vertical(darken(@light, 10%), darken(@dark, 10%));
+  }
+}

@@ -1,0 +1,28 @@
+/*---------------------------------
+  MIXINS - TABS
+-----------------------------------*/
+.nav-tabs-colorize(@type){
+  @color: ~"@{state-@{type}-text}";
+  @hover-color:~"@{brand-@{type}}";
+  > li {
+    > a {
+      color:@color;
+      &:hover {
+        color:@hover-color;
+      }
+      .badge{
+			background-color: @color;
+	  }
+    }
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color:@hover-color;
+      }
+      .badge{
+			background-color: @hover-color;
+	  }
+    }
+  }
+}

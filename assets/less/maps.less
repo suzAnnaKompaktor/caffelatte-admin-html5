@@ -1,0 +1,39 @@
+/* Maps */
+.geocoding-container{
+	position: relative;
+}
+
+.form-geocoding{
+	position: absolute;
+	top:20px;
+	left:85px;
+	z-index: 20;
+}
+
+.form-geocoding-map{
+	position: relative;
+	z-index: 1;
+}
+
+.jqvmap-zoomin,
+.jqvmap-zoomout {
+	display:block;
+	background: @inverse-bg;
+	border-radius: 2px;
+	color: @inverse-text-color;
+	height: 20px;
+	width: 20px;
+	line-height: 20px;
+	padding: 0;
+	margin:@half-space;
+	text-align: center;
+}
+
+.jqvmap-zoomin{
+	top:6px;
+}
+
+.jqvmap-zoomin:hover,
+.jqvmap-zoomout:hover {
+	background: lighten(@inverse-bg, 10%);
+}

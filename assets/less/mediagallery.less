@@ -1,0 +1,300 @@
+/*---------------------------------
+  MEDIA GALLERY
+-----------------------------------*/
+ul.mg-folders {
+	.list-unstyled;
+	
+	> li {
+		display: block;
+		position: relative;
+		height: 2.5em;
+		line-height: 2.5em;
+		.border-bottom(@border-color-light);
+		
+		a{
+			&.menu-item{
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				padding-left:@half-space;
+				padding-right: 80px;
+				color:@text-color;
+				
+				.fa{
+					width: 1em;
+					color: lighten(@text-color, 35%);
+				}
+			}
+			
+			&:hover,
+			&:focus{
+				color:@text-color;
+				
+				.fa{
+					color: @link-color;
+				}
+			}
+		}
+		
+		.item-options{
+			position: absolute;
+			padding: 0;
+			right: @half-space;
+			top: 0;
+			opacity: 0;
+			.transition(opacity 0.1s ease-in);
+			color:@text-color;
+		}
+		
+		&:hover{
+			background: @dark-bg;
+			
+			.item-options{
+				opacity: 1;
+			}
+			
+			a.menu-item{
+				color:@text-color;
+			}
+		}
+		
+		&.active{
+			background: @dark-bg;
+			a.menu-item{
+				color:@text-color;
+				
+				.fa{
+					color: @link-color;
+				}
+			}
+		}
+	}
+}
+
+ul.mg-tags {
+	.list-unstyled;
+	margin: 10px 0 0;
+	
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	
+	> li {
+		float: left;
+		margin-right: 5px;
+		margin-bottom: 5px;
+		
+		a{}
+	}
+}
+
+.media-gallery .mg-files .thumbnail {
+	margin-bottom: @double-space;
+	padding: 6px;
+	
+	.thumb-preview {
+		position: relative;
+		z-index: 2;
+		
+		.thumb-image {
+			display: block;
+			overflow: hidden;
+			
+			img{
+				width: 100%;
+				.transition(all 0.1s linear);
+			}
+		}
+		
+		.mg-thumb-options {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background:transparent;
+			background: rgba(red(@dark-inverse-bg), green(@dark-inverse-bg), blue(@dark-inverse-bg), 0.25);
+			visibility: hidden;
+			overflow: hidden;
+			
+			.mg-zoom {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: @half-space @default-space;
+				font-size: 18px;
+				font-size: 1.8rem;
+				color:@inverse-text-color;
+				background-color: @dark-inverse-bg;
+				border-radius: 0 0 0 @border-radius-small;
+				.strong-shadow;
+				cursor: pointer;
+				.transition-transform(0.1s linear 0.1s);
+				.translate(100%, 0);
+				
+				&:hover,
+				&:focus{
+					background-color: darken(@dark-inverse-bg, 10%);
+				}
+			}
+			
+			.mg-toolbar{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: 0;
+				color:@inverse-text-color;
+				background-color: @dark-inverse-bg;
+				.drop-shadow(0, -4px, 4px, rgba(0, 0, 0, 0.1));
+				.transition-transform(0.1s linear 0.1s);
+				.translate(0, 100%);
+				
+				.mg-option{
+					float:left;
+					display:inline-block;
+					padding: @half-space;
+					
+					.checkbox-custom{
+						margin:0;
+						
+						label:before{
+							border-color: @border-color-inverse;
+						}
+					}
+					
+					&:hover,
+					&:focus{
+						background-color: darken(@dark-inverse-bg, 10%);
+					}
+				}
+				
+				.mg-group{
+					> a{
+						display:block;
+						float:left;
+						color:@inverse-text-color;
+						padding: @half-space;
+						margin:0;
+						
+						&:hover,
+						&:focus{
+							background-color: darken(@dark-inverse-bg, 10%);
+						}
+					}
+					
+					.mg-toggle {
+						display:block;
+						float:right;
+						color:@inverse-text-color;
+						background: none;
+						border: none;
+						padding: @half-space 10px;
+						margin:0;
+						border-left: 1px solid @border-color-inverse;
+						
+						&:hover,
+						&:focus{
+							background-color: darken(@dark-inverse-bg, 10%);
+						}
+					}
+					
+					.dropdown-menu{
+						top: auto;
+						bottom: 100%;
+						-webkit-border-bottom-right-radius:0;
+						-webkit-border-bottom-left-radius: 0;
+						-moz-border-radius-bottomright: 0;
+						-moz-border-radius-bottomleft: 0;
+						border-bottom-right-radius: 0;
+						border-bottom-left-radius: 0;
+						.round-border-top;
+						border:none;
+						color:@inverse-text-color;
+						background-color: @dark-inverse-bg;
+						.drop-shadow(0, -4px, 4px, rgba(0, 0, 0, 0.1));
+						
+						a{
+							color:@inverse-text-color;
+							
+							&:hover,
+							&:focus{
+								background-color: darken(@dark-inverse-bg, 10%);
+							}
+						}
+						
+						li:first-child a{.round-border-top;}
+					}
+				}
+				
+				&:after {
+					content: "";
+					display: table;
+					clear: both;
+				}
+			}
+		}
+	}
+	
+	.mg-title {
+		margin: 13px 0 2px;
+		padding-bottom: 2px;
+		display: inline-block;
+		font-size: 18px;
+		font-size: 1.8rem;
+		
+		small {
+			position: relative;
+			top: 0;
+			left: 0;
+			color: @text-muted;
+			z-index: 1;
+			font-size: 12px;
+			font-size: 1.2rem;
+		}
+	}
+	
+	.mg-description{
+		font-size: 12px;
+		font-size: 1.2rem;
+		color: @text-muted;
+		
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
+	
+	&:hover{
+		.thumb-preview{
+			img {
+				.scale(1.1);
+			}
+			 .mg-thumb-options {
+				visibility: visible;
+				
+				.mg-zoom,
+				.mg-toolbar {
+					.translate(0, 0);
+				}
+			}
+		}
+	}
+}
+
+
+.media-gallery .mg-files .thumbnail.thumbnail-selected {
+	.mg-title small {
+		opacity: 1;
+	}
+	
+	.thumb-preview .mg-thumb-options {
+		visibility: visible;
+		
+		.mg-toolbar{.translate(0, 0);}
+	}
+}
+
+
